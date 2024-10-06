@@ -59,7 +59,7 @@ public class Aluno {
     }
 
     public void exibirDetalhesAluno() {
-        // utilizando printf para formatar a saída
+        
         System.out.printf("\nNome: %s\n", getNome());
         System.out.printf("Nota 1: %.1f\n", getNota1());
         System.out.printf("Nota 2: %.1f\n", getNota2());
