@@ -17,7 +17,6 @@ public class ContaCorrente extends Conta {
   
   public boolean usarChequeEspecial(double valor) {
     if (valor > 0 && getSaldo() + getChequeEspecial() >= valor) {
-      
       setSaldo(getSaldo() - valor);
       if (getSaldo() < 0) {
         setChequeEspecial(getChequeEspecial() + getSaldo());
@@ -30,12 +29,11 @@ public class ContaCorrente extends Conta {
   
   @Override
   public void exibirDados() {
-    System.out.printf("Conta Corrente\nTitular: %s\nSaldo: R$ %.2f\n", getTitular(), getSaldo());
+    System.out.println("Conta Corrente\nTitular: " + getTitular() + "\nSaldo: R$ " + String.format("%.2f", getSaldo()));
     
-    // uso do cheque especial
     if (getChequeEspecial() < 1000) {
       System.out.println("Cheque especial máximo: R$ 1.000,00");
-      System.out.printf("Cheque especial utilizado: R$ %.2f\n", 1000 - getChequeEspecial());
+      System.out.println("Cheque especial utilizado: R$ " + String.format("%.2f", 1000 - getChequeEspecial()));
     }
   }
 }

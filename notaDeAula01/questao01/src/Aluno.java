@@ -59,12 +59,11 @@ public class Aluno {
   }
   
   public void exibirDetalhesAluno() {
-    
-    System.out.printf("\nNome: %s\n", getNome());
-    System.out.printf("Nota 1: %.1f\n", getNota1());
-    System.out.printf("Nota 2: %.1f\n", getNota2());
-    System.out.printf("Nota 3: %.1f\n", getNota3());
-    System.out.printf("Média: %.1f\n", calcularMedia());
-    System.out.printf("Situação: %s\n", verificarAprovacao());
+    System.out.println("\nNome: " + getNome());
+    System.out.println("Nota 1: " + getNota1());
+    System.out.println("Nota 2: " + getNota2());
+    System.out.println("Nota 3: " + getNota3());
+    System.out.println("Média: " + calcularMedia());
+    System.out.println("Situação: " + verificarAprovacao());
   }
 }

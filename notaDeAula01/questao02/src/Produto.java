@@ -20,6 +20,7 @@ public class Produto {
   public int getCodigo() {
     return codigo;
   }
+  
   public void setCodigo(int codigo) {
     this.codigo = codigo;
   }
@@ -27,6 +28,7 @@ public class Produto {
   public String getNome() {
     return nome;
   }
+  
   public void setNome(String nome) {
     this.nome = nome;
   }
@@ -34,6 +36,7 @@ public class Produto {
   public String getTamanhoPeso() {
     return tamanhoPeso;
   }
+  
   public void setTamanhoPeso(String tamanhoPeso) {
     this.tamanhoPeso = tamanhoPeso;
   }
@@ -41,6 +44,7 @@ public class Produto {
   public String getCor() {
     return cor;
   }
+  
   public void setCor(String cor) {
     this.cor = cor;
   }
@@ -48,6 +52,7 @@ public class Produto {
   public double getValor() {
     return valor;
   }
+  
   public void setValor(double valor) {
     this.valor = valor;
   }
@@ -55,13 +60,19 @@ public class Produto {
   public int getQuantidadeEstoque() {
     return quantidadeEstoque;
   }
+  
   public void setQuantidadeEstoque(int quantidadeEstoque) {
     this.quantidadeEstoque = quantidadeEstoque;
   }
   
   
   public void exibirInfo() {
-    System.out.printf("\nCódigo: %d\nNome: %s\nTamanho/Peso: %s\nCor: %s\nValor: R$ %.2f\nQuantidade em estoque: %d\n", getCodigo(), getNome(), getTamanhoPeso(), getCor(), getValor(), getQuantidadeEstoque());
+    System.out.println("\nCódigo: " + getCodigo());
+    System.out.println("Nome: " + getNome());
+    System.out.println("Tamanho/Peso: " + getTamanhoPeso());
+    System.out.println("Cor: " + getCor());
+    System.out.println("Valor: R$ " + String.format("%.2f", getValor()));
+    System.out.println("Quantidade em estoque: " + getQuantidadeEstoque());
   }
   
   
@@ -96,7 +107,7 @@ public class Produto {
         troco = valorRecebido - valorFinal;
       }
       
-    }else if (formaPagamento.equalsIgnoreCase("Crédito")) {
+    } else if (formaPagamento.equalsIgnoreCase("Crédito")) {
       double valorParcela;
       double juros = 0;
       
@@ -107,25 +118,24 @@ public class Produto {
       valorFinal = valorTotal + juros;
       
       if (valorFinal > 0) {
-        System.out.printf("\nValor total antes dos juros: R$ %.2f\n", valorTotal);
-        System.out.printf("\nJuros: R$ %.2f\n", juros);
+        System.out.println("\nValor total antes dos juros: R$ " + String.format("%.2f", valorTotal));
+        System.out.println("\nJuros: R$ " + String.format("%.2f", juros));
         
         if (parcelas > 10) {
           parcelas = 10;
         }
         
         valorParcela = valorFinal / parcelas;
-        
-        System.out.printf("\nValor da parcela: R$ %.2f\n", valorParcela);
+        System.out.println("\nValor da parcela: R$ " + String.format("%.2f", valorParcela));
       }
     }
     
     if (valorFinal > 0) {
-      System.out.printf("\nDesconto: R$ %.2f\n", desconto);
-      System.out.printf("\nValor final: R$ %.2f\n", valorFinal);
+      System.out.println("\nDesconto: R$ " + String.format("%.2f", desconto));
+      System.out.println("\nValor final: R$ " + String.format("%.2f", valorFinal));
       
       if (troco > 0) {
-        System.out.printf("Troco: R$ %.2f\n", troco);
+        System.out.println("Troco: R$ " + String.format("%.2f", troco));
       }
     }
   }
